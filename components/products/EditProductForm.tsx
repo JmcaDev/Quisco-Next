@@ -25,7 +25,7 @@ function EditProductForm({children}: {children: React.ReactNode}) {
             })
             return
         }
-
+        console.log(data)
         const response = await createProduct(result.data)
         if(response?.errors){
             response.errors.forEach((issue) => {
@@ -33,7 +33,7 @@ function EditProductForm({children}: {children: React.ReactNode}) {
             })
             return
         }
-
+        return
         toast.success("Producto creado correctamente")
         router.push("/admin/products")
     }
